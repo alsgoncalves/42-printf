@@ -118,6 +118,9 @@ int ft_printf(const char *format, ...)
     }
 
     va_end(ap);
+    printf("ZERO = %i\n", flags.zero);
+    printf("MINUS = %i\n", flags.minus);
+    printf("PLUS = %i\n", flags.plus);
     // To return total number of chars displayed by printf
     return (char_count);
 }
@@ -125,14 +128,14 @@ int ft_printf(const char *format, ...)
 int main()
 {
     // char a;
-    t_flag flags;
+    //t_flag flags;
     //  int num;
     //  int i;
-    char *str;
+    //char *str;
 
     // i = 0;
     //  num = 0;
-    str = "Hello beautiful day";
+    //str = "Hello beautiful day";
     // // flags = ft_initialize_flags();
     // // a = ft_check_type(str, flags);
     // // printf("Printing a : %c\n", a);
@@ -142,8 +145,6 @@ int main()
     // printf("%i\n", 130999870098765);
     // //printf("%.7896f\n", num);
     ft_printf("Beauti %-050s hey hey");
-    printf("ZERO = %i\n", flags.zero);
-    printf("MINUS = %i\n", flags.minus);
-    printf("PLUS = %i\n", flags.plus);
+    
     return 0;
 }
