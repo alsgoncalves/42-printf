@@ -49,7 +49,7 @@ t_flag  ft_initialize_flags(void)
     return(flags);
 }
 
-char    ft_check_type(const char *format, t_flag flags)
+char    ft_check_type(const char *format, t_flag *flags)
 {
     while (*format)
     {
@@ -57,7 +57,7 @@ char    ft_check_type(const char *format, t_flag flags)
                 || *format == 'd' || *format == 'i' || *format == 'u'
                     || *format == 'x' || *format == 'X' || *format == '%')
         {
-            flags.type = *format;
+            flags->type = *format;
             return (*format);
         }
         format++;
@@ -65,28 +65,28 @@ char    ft_check_type(const char *format, t_flag flags)
     return (0);
 }
 
-void     ft_check_flags(const char *format, t_flag flags)
+void     ft_check_flags(const char *format, t_flag *flags)
 {
     //flags = ft_initialize_flags();
     while (!ft_check_type(format, flags))
     {
         if (*format == '-')
-            flags.minus = 1;
+            flags->minus = 1;
         else if (*format == '+')
-            flags.plus = 1;
+            flags->plus = 1;
         else if (*format == '0')
-            flags.zero = 1;
+            flags->zero = 1;
         else if (is_num(*format))
-            flags.width = char_to_int((char*)format);
+            flags->width = char_to_int((char*)format);
         else if (*format == '.' && (*format + 1))
         {
-            flags.dot = 1;
-            flags.precision_value =  char_to_int((char*)format + 1);
+            flags->dot = 1;
+            flags->precision_value =  char_to_int((char*)format + 1);
             format++;
         }
         format++;
     }
-    flags.type = ft_check_type(format, flags);
+    flags->type = ft_check_type(format, flags);
 }
 
 
@@ -111,7 +111,7 @@ int ft_printf(const char *format, ...)
         {
             if (*format + 1)
             {
-                ft_check_flags((char*)format, flags);
+                ft_check_flags((char*)format, &flags);
             }
         }
         format++;
