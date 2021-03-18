@@ -23,7 +23,6 @@ typedef	struct	s_flag
 	int		plus;
 	int		minus;
 	int		star;
-	int		star_location;
 	int		dot;
 	int		precision_value;
 	char	type;

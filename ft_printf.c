@@ -4,17 +4,18 @@
 
 int is_num(char c)
 {
-    if ((c >= '0' && c <= '9') || c == '%')
+    if (c >= '0' && c <= '9')
         return (1);
     return (0);
 }
 
-int     char_to_int(char *str)
+int     char_to_int(char *str, int *n)
 {
     int num;
+    //int i;
     int i;
-
-    i = 0;
+    i = *n;
+    //i = 0;
     num = 0;
     while (str[i])
     {
@@ -23,13 +24,15 @@ int     char_to_int(char *str)
             num += str[i] - '0';
             while (is_num(str[i + 1]))
             {
-                num = (num * 10) + (str[i + 1]- '0');
+                num = (num * 10) + (str[i + 1] - '0');
                 i++;
             }
-            i++;
         }
+        if (!is_num(str[i]))
+            break ;
         i++;
     }
+    *n = i;
     return (num);
 }
 
@@ -42,7 +45,6 @@ t_flag  ft_initialize_flags(void)
 	flags.plus = 0;
 	flags.minus = 0;
 	flags.star = 0;
-	flags.star_location = 0;
 	flags.dot = 0;
 	flags.precision_value = -1;
 	flags.type = 0;
@@ -60,30 +62,33 @@ char    ft_check_type(char c)
 
 void     ft_check_flags(const char *format, t_flag *flags)
 {
-    //flags = ft_initialize_flags();
+    int i;
 
-    while (*format)
+    i = 0;
+    while (format[i])
     {   
-        if (*format == '-')
+        if (format[i] == '-')
             flags->minus = 1;
-        else if (*format == '+')
+        if (format[i] == '+')
             flags->plus = 1;
-        else if (*format == '0')
+        if (format[i] == '0' && flags->width == 0)
             flags->zero = 1;
-        else if (is_num(*format))
-            flags->width = char_to_int((char*)format);
-        else if (*format == '.' && (*format + 1))
+        if (format[i] == '*')
+            flags->star = 1;
+        if (is_num(format[i]))
+            flags->width = char_to_int((char *)format, &i);
+        if (format[i] == '.' && format[i + 1])
         {
             flags->dot = 1;
-            flags->precision_value =  char_to_int((char*)format + 1);
-            format++;
+            i++;
+            flags->precision_value =  char_to_int((char *)format, &i);
         }
-        else if (ft_check_type(*format))
+        if (ft_check_type(format[i]))
         {
-            flags->type = *format;
+            flags->type = format[i];
             break ;
         }
-        format++;
+        i++;
     }
 }
 
@@ -118,6 +123,9 @@ int ft_printf(const char *format, ...)
     printf("MINUS = %i\n", flags.minus);
     printf("PLUS = %i\n", flags.plus);
     printf("TYPE = %c\n", flags.type);
+    printf("DOT = %i\n", flags.dot);
+    printf("Precision = %i\n", flags.precision_value);
+    printf("Width = %i\n", flags.width);
     va_end(ap);
     // To return total number of chars displayed by printf
     return (char_count);
@@ -127,13 +135,13 @@ int main()
 {
     // char a;
     //t_flag flags;
-    //  int num;
+    // int num;
     //  int i;
     //char *str;
 
     // i = 0;
-    //  num = 0;
-    //str = "Hello beautiful day";
+    // num = 0;
+    //str = "Bea %250s hey + hey";
     // // flags = ft_initialize_flags();
     // // a = ft_check_type(str, flags);
     // // printf("Printing a : %c\n", a);
@@ -142,7 +150,9 @@ int main()
     // printf("%i\n", num);
     // printf("%i\n", 130999870098765);
     // //printf("%.7896f\n", num);
-    ft_printf("Bea %-050s hey + hey");
+    ft_printf("%-23.s hey + hey");
+    //num = char_to_int(str);
+    //printf("%i\n", num);
     
     return 0;
 }
