@@ -4,7 +4,7 @@
 
 int is_num(char c)
 {
-    if (c >= '0' && c <= '9')
+    if ((c >= '0' && c <= '9') || c == '%')
         return (1);
     return (0);
 }
@@ -49,27 +49,21 @@ t_flag  ft_initialize_flags(void)
     return(flags);
 }
 
-char    ft_check_type(const char *format, t_flag *flags)
+char    ft_check_type(char c)
 {
-    while (*format)
-    {
-        if (*format == 'c' || *format == 's' || *format == 'p' 
-                || *format == 'd' || *format == 'i' || *format == 'u'
-                    || *format == 'x' || *format == 'X' || *format == '%')
-        {
-            flags->type = *format;
-            return (*format);
-        }
-        format++;
-    }
+    if (c == 'c' || c == 's' || c == 'p' 
+            || c == 'd' || c == 'i' || c == 'u'
+                || c == 'x' || c == 'X' || c == '%')
+        return (c);
     return (0);
 }
 
 void     ft_check_flags(const char *format, t_flag *flags)
 {
     //flags = ft_initialize_flags();
-    while (!ft_check_type(format, flags))
-    {
+
+    while (*format)
+    {   
         if (*format == '-')
             flags->minus = 1;
         else if (*format == '+')
@@ -84,43 +78,47 @@ void     ft_check_flags(const char *format, t_flag *flags)
             flags->precision_value =  char_to_int((char*)format + 1);
             format++;
         }
+        else if (ft_check_type(*format))
+        {
+            flags->type = *format;
+            break ;
+        }
         format++;
     }
-    flags->type = ft_check_type(format, flags);
 }
 
 
 int ft_printf(const char *format, ...)
 {
+    int i;
     t_flag flags;
     int char_count;
     va_list ap;
 
     char_count = 0;
+    i = 0;
     flags = ft_initialize_flags();
     va_start(ap, (char *)format);
     // calculate char_count
     while (*format)
     {
-        if (*format != '%')
+        if (*format == '%')
+        {
+            ft_check_flags((format + 1), &flags);
+        }
+        else
         {
             write(1, format, 1);
             char_count++;
         }
-        else
-        {
-            if (*format + 1)
-            {
-                ft_check_flags((char*)format, &flags);
-            }
-        }
         format++;
     }
-
-    va_end(ap);
+    
     printf("ZERO = %i\n", flags.zero);
     printf("MINUS = %i\n", flags.minus);
     printf("PLUS = %i\n", flags.plus);
+    printf("TYPE = %c\n", flags.type);
+    va_end(ap);
     // To return total number of chars displayed by printf
     return (char_count);
 }
@@ -144,7 +142,7 @@ int main()
     // printf("%i\n", num);
     // printf("%i\n", 130999870098765);
     // //printf("%.7896f\n", num);
-    ft_printf("Beauti %-050s hey hey");
+    ft_printf("Bea %-050s hey + hey");
     
     return 0;
 }
