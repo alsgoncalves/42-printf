@@ -12,10 +12,9 @@ int is_num(char c)
 int     char_to_int(char *str, int *n)
 {
     int num;
-    //int i;
     int i;
+
     i = *n;
-    //i = 0;
     num = 0;
     while (str[i])
     {
@@ -60,7 +59,7 @@ char    ft_check_type(char c)
     return (0);
 }
 
-void     ft_check_flags(const char *format, t_flag *flags)
+int     ft_check_flags(const char *format, t_flag *flags)
 {
     int i;
 
@@ -90,6 +89,7 @@ void     ft_check_flags(const char *format, t_flag *flags)
         }
         i++;
     }
+    return (i);
 }
 
 
@@ -109,7 +109,12 @@ int ft_printf(const char *format, ...)
     {
         if (*format == '%')
         {
-            ft_check_flags((format + 1), &flags);
+            i = ft_check_flags((format + 1), &flags);
+            while (*format != flags.type)
+            {
+                format++;
+            }
+            char_count += ft_treat_flags(ap, &flags);
         }
         else
         {
@@ -119,13 +124,13 @@ int ft_printf(const char *format, ...)
         format++;
     }
     
-    printf("ZERO = %i\n", flags.zero);
-    printf("MINUS = %i\n", flags.minus);
-    printf("PLUS = %i\n", flags.plus);
-    printf("TYPE = %c\n", flags.type);
-    printf("DOT = %i\n", flags.dot);
-    printf("Precision = %i\n", flags.precision_value);
-    printf("Width = %i\n", flags.width);
+    // printf("ZERO = %i\n", flags.zero);
+    // printf("MINUS = %i\n", flags.minus);
+    // printf("PLUS = %i\n", flags.plus);
+    // printf("TYPE = %c\n", flags.type);
+    // printf("DOT = %i\n", flags.dot);
+    // printf("Precision = %i\n", flags.precision_value);
+    // printf("Width = %i\n", flags.width);
     va_end(ap);
     // To return total number of chars displayed by printf
     return (char_count);
@@ -133,15 +138,15 @@ int ft_printf(const char *format, ...)
 
 int main()
 {
-    // char a;
+     char a;
     //t_flag flags;
     // int num;
     //  int i;
     //char *str;
-
+    a = 'x';
     // i = 0;
     // num = 0;
-    //str = "Bea %250s hey + hey";
+   // str = "Beaut";
     // // flags = ft_initialize_flags();
     // // a = ft_check_type(str, flags);
     // // printf("Printing a : %c\n", a);
@@ -150,7 +155,8 @@ int main()
     // printf("%i\n", num);
     // printf("%i\n", 130999870098765);
     // //printf("%.7896f\n", num);
-    ft_printf("%-23.s hey + hey");
+    ft_printf("There is sun in planet : %-9c. But only there\n", a);
+    printf("There is sun in planet : %-9c. But only there\n", a);
     //num = char_to_int(str);
     //printf("%i\n", num);
     
