@@ -135,30 +135,3 @@ int ft_printf(const char *format, ...)
     // To return total number of chars displayed by printf
     return (char_count);
 }
-
-int main()
-{
-     char a;
-    //t_flag flags;
-    // int num;
-    //  int i;
-    //char *str;
-    a = 'x';
-    // i = 0;
-    // num = 0;
-   // str = "Beaut";
-    // // flags = ft_initialize_flags();
-    // // a = ft_check_type(str, flags);
-    // // printf("Printing a : %c\n", a);
-    
-    // num = char_to_int(str);
-    // printf("%i\n", num);
-    // printf("%i\n", 130999870098765);
-    // //printf("%.7896f\n", num);
-    ft_printf("There is sun in planet : %-9c. But only there\n", a);
-    printf("There is sun in planet : %-9c. But only there\n", a);
-    //num = char_to_int(str);
-    //printf("%i\n", num);
-    
-    return 0;
-}
