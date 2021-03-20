@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
+/*   Updated: 2021/03/20 14:41:21 by asobreir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "ft_printf.h"
 
 #include <stdio.h> // to be removed
@@ -115,6 +128,7 @@ int ft_printf(const char *format, ...)
                 format++;
             }
             char_count += ft_treat_flags(ap, &flags);
+            flags = ft_initialize_flags();
         }
         else
         {

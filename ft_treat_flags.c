@@ -4,8 +4,8 @@ int ft_treat_flags(va_list ap, t_flag *flags)
 {
     if (flags->type == 'c')
         return (ft_treat_char(ap, flags));
-    // if (flags->type == 's') 
-    //     //
+    if (flags->type == 's') 
+		return (ft_treat_str(ap, flags));
 	// if (flags->type == 'p')
 	// 	//
 	// if (flags->type == 'd')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asobreir <asobreir@42lisboa.com>           +#+  +:+       +#+        */
+/*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/17 11:40:18 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:01:35 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_flag  ft_initialize_flags(void);
 char    ft_check_type(char c);
 int     ft_check_flags(const char *format, t_flag *flags);
 int ft_printf(const char *format, ...);
-
+void	ft_putchar(char c);
+int		ft_treat_str(va_list ap, t_flag *flags);
 
 #endif
