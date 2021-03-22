@@ -6,7 +6,7 @@
 #    By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 12:16:48 by asobreir          #+#    #+#              #
-#    Updated: 2021/03/22 15:33:27 by asobreir         ###   ########.fr        #
+#    Updated: 2021/03/22 15:41:53 by asobreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ FLAGS := -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRCS := $(wildcard *.c)
+SRCS := ft_printf.c \
+		main.c \
+			$(wildcard sources/*.c)
 
 OBJS = $(SRCS:.c=.o)
 
