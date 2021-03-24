@@ -23,6 +23,10 @@ int main()
     // //printf("%.7896f\n", num);
     printf("\n----- C H A R S -----\n\n");
 
+    printf("\nCheck Width\n");
+    ft_printf("FT : There is sun in planet : %c. But only there\n", a);
+    printf("RL : There is sun in planet : %c. But only there\n", a);
+
     printf("Check Minus & Width\n");
     ft_printf("FT : There is sun in planet : %-9c. But only : %9c there %-5c \n", a, a, b);
     printf("RL : There is sun in planet : %-9c. But only : %9c there %-5c \n", a, a, b);
@@ -38,6 +42,10 @@ int main()
     printf("\nCheck Star & Minus\n");
     ft_printf("FT : There is sun in planet : %-*c. But only there\n", 5, a);
     printf("RL : There is sun in planet : %-*c. But only there\n", 5, a);
+
+    printf("\nCheck Star & Minus in Var\n");
+    ft_printf("FT : There is sun in planet : %-*c. But only there\n", 5, a);
+    printf("RL : There is sun in planet : %*c. But only there\n", -5, a);
 
     printf("\n----- S T R I N G S -----\n\n");
 
