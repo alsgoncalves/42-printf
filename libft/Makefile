@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asobreir <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/13 16:43:30 by asobreir          #+#    #+#              #
-#    Updated: 2021/02/13 16:54:29 by asobreir         ###   ########.fr        #
+#    Updated: 2021/03/24 12:50:16 by asobreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ SRCS= ft_atoi.c \
 			ft_substr.c \
 			ft_tolower.c \
 			ft_toupper.c \
+			ft_putchar.c \
+			ft_putstr.c \
 
 SRCS_B= ft_lstadd_back.c \
 			ft_lstadd_front.c \
@@ -68,7 +70,7 @@ FLAGS= -Wall -Wextra -Werror
 RM = rm -f
 
 .c.o:
-	${CC} ${FLAGS} -I include -c $< -o ${<:.c=.o}
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 	ar -rcs ${NAME} ${OBJS}

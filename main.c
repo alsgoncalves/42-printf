@@ -56,6 +56,10 @@ int main()
     printf("\n\n");
     ft_printf("FT : Today is a %2s day\n", str);
     printf("RL : Today is a %2s day\n", str);
+
+    printf("\n\n");
+    ft_printf("FT : Today is a %s day\n", str);
+    printf("RL : Today is a %s day\n", str);
     //num = char_to_int(str);
     //printf("%i\n", num);
     

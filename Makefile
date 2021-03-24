@@ -6,7 +6,7 @@
 #    By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 12:16:48 by asobreir          #+#    #+#              #
-#    Updated: 2021/03/22 15:41:53 by asobreir         ###   ########.fr        #
+#    Updated: 2021/03/24 12:40:57 by asobreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,20 +20,20 @@ FLAGS := -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRCS := ft_printf.c \
-		main.c \
+SRCS = ft_printf.c \
 			$(wildcard sources/*.c)
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+%.o: %.c
+	${CC} ${FLAGS} -c -o $@ $< 
 
 $(NAME): $(OBJS)
-	@make -C $(LIBFT)
+	$(MAKE) -C $(LIBFT)
 	cp $(LIBFT)/libft.a $(NAME)
-	${CC} ${FLAGS} -I includes $(SRCS)
-	ar -rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	ar -rcs $(NAME) $(OBJS)
+
+all: $(NAME)
 
 clean: $(OBJS)
 	$(RM) $(OBJS)
