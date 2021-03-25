@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/24 15:40:41 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:01:19 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ typedef	struct	s_flag
 {
 	int		width;
 	int		zero;
-	int		plus;
 	int		minus;
-	int		star;
+	int		width_star;
 	int		dot;
 	int		precision_value;
+	int		precision_star;
 	char	type;
 }				t_flag;
 
@@ -42,5 +42,6 @@ char    ft_check_type(char c);
 int     ft_check_flags(const char *format, t_flag *flags);
 int		ft_printf(const char *format, ...);
 int		ft_treat_str(va_list ap, t_flag *flags);
+int		ft_treat_precision(va_list ap, t_flag *flags, int *char_count);
 
 #endif
