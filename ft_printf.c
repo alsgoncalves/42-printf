@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/25 12:45:17 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/26 13:05:59 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ int ft_printf(const char *format, ...)
     // printf("Width = %i\n", flags.width);
     // printf("Precison_star = %i\n", flags.precision_star);
     // printf("star = %i\n", flags.width_star);
-    // va_end(ap);
+    va_end(ap);
     // To return total number of chars displayed by printf
     return (char_count);
 }

@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/25 16:01:19 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/26 11:34:51 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ char    ft_check_type(char c);
 int     ft_check_flags(const char *format, t_flag *flags);
 int		ft_printf(const char *format, ...);
 int		ft_treat_str(va_list ap, t_flag *flags);
-int		ft_treat_precision(va_list ap, t_flag *flags, int *char_count);
+int		ft_treat_precision(int precision, char *str, int *char_count);
 
 #endif
