@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_treat_precision.c                               :+:      :+:    :+:   */
+/*   ft_convert_stars.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 10:22:40 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 17:27:37 by asobreir         ###   ########.fr       */
+/*   Created: 2021/03/26 18:36:20 by asobreir          #+#    #+#             */
+/*   Updated: 2021/03/26 18:37:57 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		ft_treat_precision(int precision, char *str, int *char_count)
+void	ft_convert_stars(t_flag *flags, va_list ap)
 {
-	int temp;
-	int i;
-
-	temp = *char_count;
-	i = 0;
-	// if (precision == 0)
-	// 	return (*char_count);
-	if (precision < (int)ft_strlen(str))
+	if (flags->width_star)
 	{
-		while (precision)
+		flags->width = va_arg(ap, int);
+		if (flags->width < 0)
 		{
-			ft_putchar(str[i]);
-			temp++;
-			i++;
-			precision--;
+			flags->minus = 1;
+			flags->width *= -1;
 		}
 	}
-	else 
-		temp += ft_putstr(str);
-	*char_count = temp;
-	return (*char_count);
+	if (flags->precision_star)
+	{
+		flags->precision_value = va_arg(ap, int);
+		if (flags->precision_value < 0)
+		{
+			flags->minus = 1;
+			flags->dot = 0;
+		}	
+	}
 }

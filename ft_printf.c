@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 15:33:40 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/26 17:58:34 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,6 @@ int     ft_check_flags(const char *format, t_flag *flags)
             i++;
             if (format[i] == '*')
                 flags->precision_star = 1;
-            // else if (format[i] != is_num(format[i]))
-            //     flags->precision_value = 0;
             else
                 flags->precision_value = char_to_int((char *)format, &i);
         }

@@ -2,16 +2,16 @@
 
 int main()
 {
-    //  char a;
-    //  char b;
+     char a;
+     char b;
     //t_flag flags;
     // int num;
     //  int i;
     char *str;
     int i;
     int n;
-    // a = 'x';
-    // b = '&';
+    a = 'x';
+    b = '&';
     // i = 0;
     // num = 0;
     str = "beautiful";
@@ -139,11 +139,28 @@ int main()
     // n = printf("RL : %10.s %1.s ", "123", "4567");
     // printf("%i\n", n);
 
-    printf("\n TEST 28 \n");
-    i = ft_printf("FT :%3.3s %3.3s ", "123", "4567");
-    printf("%i\n", i);
-    n = printf("RL :%3.3s %3.3s ", "123", "4567");
-    printf("%i\n", n);
+    // printf("\n TEST 28 \n");
+    // i = ft_printf("FT :%3.3s %3.3s ", "123", "4567");
+    // printf("%i\n", i);
+    // n = printf("RL :%3.3s %3.3s ", "123", "4567");
+    // printf("%i\n", n);
+
+    // printf("\n TEST 36 \n");
+    // i = ft_printf("%.*s", -2, NULL);
+    // printf("%i\n", i);
+    // n = printf("%.*s", -2, NULL);
+    // printf("%i\n", n);
+    //  printf("%*c\n", 0, '0');
+    //  ft_printf("%*c\n", 0, '0');
+
+     printf("RL: %-c%-c%c*\n", 1, '0', 0);
+     ft_printf("FT: %-c%-c%c*\n", 1, '0', 0);
+
+    //  printf("\n TEST MINE \n");
+    // i = ft_printf("%.-4s", NULL);
+    // printf("%i\n", i);
+    // n = printf("%.-4s", NULL);
+    // printf("%i\n", n);
     //num = char_to_int(str);
     //printf("%i\n", num);
     
