@@ -8,6 +8,8 @@ int main()
     // int num;
     //  int i;
     char *str;
+    int i;
+    int n;
     // a = 'x';
     // b = '&';
     // i = 0;
@@ -111,10 +113,37 @@ int main()
     // ft_printf("FT : Today is a %10.4s day\n", str);
 	// printf("RL : Today is a %10.4s day\n", str);
 
-    printf("\n TEST 18 \n");
-    printf("%d\n", ft_printf("FT : %*.3s %.3s\n", 10, "123", "4567"));
-	printf("%d\n", printf("RL : %*.3s %.3s\n", 10, "123", "4567"));
+    // printf("\n TEST 18 \n");
+    // printf("%d\n", ft_printf("FT : %*.3s %.3s\n", 10, "123", "4567"));
+	// printf("%d\n", printf("RL : %*.3s %.3s\n", 10, "123", "4567"));
 
+    // printf("\n TEST MINE \n");
+    // printf("%d\n", ft_printf("FT : Today is %*.3s %.3s\n", 10, "123", "4567"));
+	// printf("%d\n", printf("RL : Today is %*.3s %.3s\n", 10, "123", "4567"));
+
+    // printf("\n TEST 16 \n");
+    // i = ft_printf("%*.s %.1s", 10, "123", "4567");
+    // printf("%i\n", i);
+    // n = printf("%*.s %.1s", 10, "123", "4567");
+    // printf("%i\n", n);
+
+    // printf("\n TEST 22 \n");
+    // i = ft_printf("<FT : %*.5s %*.5s ", -10, "123", 10, "4567");
+    // printf("%i\n", i);
+    // n = printf("<RL : %*.5s %*.5s ", -10, "123", 10, "4567");
+    // printf("%i\n", n);
+
+    // printf("\n TEST 25 \n");
+    // i = ft_printf("FT : %10.s %1.s ", "123", "4567");
+    // printf("%i\n", i);
+    // n = printf("RL : %10.s %1.s ", "123", "4567");
+    // printf("%i\n", n);
+
+    printf("\n TEST 28 \n");
+    i = ft_printf("FT :%3.3s %3.3s ", "123", "4567");
+    printf("%i\n", i);
+    n = printf("RL :%3.3s %3.3s ", "123", "4567");
+    printf("%i\n", n);
     //num = char_to_int(str);
     //printf("%i\n", num);
     

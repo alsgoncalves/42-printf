@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 10:22:40 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 11:43:08 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/26 15:33:48 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int		ft_treat_precision(int precision, char *str, int *char_count)
 
 	temp = *char_count;
 	i = 0;
+	// if (precision == 0)
+	// 	return (*char_count);
 	if (precision < (int)ft_strlen(str))
 	{
 		while (precision)
@@ -60,7 +62,7 @@ int		ft_treat_precision(int precision, char *str, int *char_count)
 		}
 	}
 	else 
-		temp = ft_putstr(str);
+		temp += ft_putstr(str);
 	*char_count = temp;
 	return (*char_count);
 }
