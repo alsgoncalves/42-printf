@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 11:28:15 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 14:24:36 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:56:28 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_treat_width(int width, int minus, int has_zero, int *char_count)
 	temp = *char_count;
 	while (width - minus)
 	{	
-		if (has_zero)
+		if (has_zero > 0)
 			ft_putchar('0');
 		else
 			ft_putchar(' ');

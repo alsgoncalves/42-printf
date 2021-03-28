@@ -2,19 +2,19 @@
 
 int main()
 {
-     char a;
-     char b;
+    //  char a;
+    //  char b;
     //t_flag flags;
     // int num;
     //  int i;
-    char *str;
+   // char *str;
     int i;
     int n;
-    a = 'x';
-    b = '&';
-    // i = 0;
-    // num = 0;
-    str = "beautiful";
+    // a = 'x';
+    // b = '&';
+    // // i = 0;
+    // // num = 0;
+    // str = "beautiful";
     // // flags = ft_initialize_flags();
     // // a = ft_check_type(str, flags);
     // // printf("Printing a : %c\n", a);
@@ -153,14 +153,51 @@ int main()
     //  printf("%*c\n", 0, '0');
     //  ft_printf("%*c\n", 0, '0');
 
-     printf("RL: %-c%-c%c*\n", 1, '0', 0);
-     ft_printf("FT: %-c%-c%c*\n", 1, '0', 0);
+    //  printf("RL: %-c%-c%c*\n", 1, '0', 0);
+    //  ft_printf("FT: %-c%-c%c*\n", 1, '0', 0);
 
     //  printf("\n TEST MINE \n");
     // i = ft_printf("%.-4s", NULL);
     // printf("%i\n", i);
     // n = printf("%.-4s", NULL);
     // printf("%i\n", n);
+    printf("\nDIGIT ONLY \n");
+    printf("RL %d", 0);
+    ft_printf("FT %d", 3);
+    printf("\n");
+    printf("\n\nDOT \n");
+	printf("RL %.d\n", 0);
+    printf("RL %.d\n", 1);
+    ft_printf("FT %.d\n", 30);
+    printf("\n");
+    printf("RL %.0d\n", 30);
+    ft_printf("FT %.0d\n", 30);
+    printf("\n");
+   // printf("%.1d\n", 30);
+
+    printf("\n\nMINUS DOT PREC VALUE \n");
+    printf("RL %.2d\n", 300);
+    ft_printf("FT %.2d\n", 300);
+    printf("\n");
+	printf("RL %-.2d\n", 3);
+    ft_printf("FT %-.2d\n", 3);
+    printf("\n");
+    printf("\n\nMINUS WIDTH -  DOT - PREC VALUE \n");
+	printf("RL %-2.2d\n", 3);
+    ft_printf("FT %-2.2d\n", 3);
+    printf("\n");
+
+	printf("RL %3.2d\n", 3);
+    ft_printf("FT %3.2d\n", 3);
+    printf("\n");
+	printf("RL %-3.2d %10.42d\n", 3, 0);
+    ft_printf("FT %-3.2d %10.42d\n", 3, 0);
+    printf("\n");
+	printf("RL %-3.2d %10.42d\n", 1, -1);
+    ft_printf("FT %-3.2d %10.42d\n", 1, -1);
+    printf("\n");
+	printf("RL %-10.2d %10.42d\n", 10, -10);
+    printf("FT %-10.2d %10.42d\n", 10, -10);
     //num = char_to_int(str);
     //printf("%i\n", num);
     
