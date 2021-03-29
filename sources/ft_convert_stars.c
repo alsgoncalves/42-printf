@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 18:36:20 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 18:37:57 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/29 15:53:11 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ void	ft_convert_stars(t_flag *flags, va_list ap)
 		flags->precision_value = va_arg(ap, int);
 		if (flags->precision_value < 0)
 		{
-			flags->minus = 1;
-			flags->dot = 0;
+			//if (flags->type == 's')
+				flags->dot = 0;
+			// 	flags->minus = 1;
+			
+			//flags->precision_value *= -1;
 		}	
 	}
 }

@@ -7,14 +7,14 @@ int main()
     //t_flag flags;
     // int num;
     //  int i;
-   // char *str;
+    //char *str;
     int i;
     int n;
     // a = 'x';
     // b = '&';
     // // i = 0;
     // // num = 0;
-    // str = "beautiful";
+    //str = "beautiful";
     // // flags = ft_initialize_flags();
     // // a = ft_check_type(str, flags);
     // // printf("Printing a : %c\n", a);
@@ -23,7 +23,7 @@ int main()
     // printf("%i\n", num);
     // printf("%i\n", 130999870098765);
     // //printf("%.7896f\n", num);
-    // printf("\n----- C H A R S -----\n\n");
+    // printf("\n----- C H A RL S -----\n\n");
 
     // // printf("\nCheck Width\n");
     // // ft_printf("FT : There is sun in planet : %c. But only there\n", a);
@@ -49,7 +49,7 @@ int main()
     // // ft_printf("FT : There is sun in planet : %-*c. But only there\n", 5, a);
     // // printf("RL : There is sun in planet : %*c. But only there\n", -5, a);
 
-    // printf("\n----- S T R I N G S -----\n\n");
+    // printf("\n----- S T RL I N G S -----\n\n");
 
     // //ft_printf("FT : Today is a %9s day\n", str);
     // ft_printf("FT : Today is a %20s day\n", str);
@@ -87,8 +87,23 @@ int main()
     // printf("RL : Today is a %.*s day\n", 4, str);
 
     // printf("\nMINUS, DOT & STAR\n");
-    // ft_printf("RL : Today is a %-20.*s day\n", 50, str);
-    // printf("RL : Today is a %-20.*s day\n", 50, str);
+    // // ft_printf("FT : Today is a %20.-50s day\n", str);
+    // // printf("RL : Today is a %20.-50s day\n", str);
+
+    // ft_printf("FT : Today is a %20.*s day\n", 50, str);
+    // printf("RL : Today is a %20.*s day\n", 50, str);
+
+    // ft_printf("FT : Today is a %20.*s day\n", -50, str);
+    // printf("RL : Today is a %20.*s day\n", -50, str);
+
+    // printf("\nNULL\n");
+    // printf("RL %-3.s\n", NULL);
+    // ft_printf("FT %-3.s\n", NULL);
+    // printf("RL %-9.1s\n", NULL);
+    // ft_printf("FT %-9.1s\n", NULL);
+    // printf("RL %.*s\n", -2, NULL);
+    // ft_printf("FT %.*s\n", -2, NULL);
+    // printf("RL %.*s\n", -2, str);
 
     // printf("\nSTAR, DOT & ZERO\n");
     // ft_printf("RL : Today is a %*.1s day\n", 4, str);
@@ -162,12 +177,16 @@ int main()
     // n = printf("%.-4s", NULL);
     // printf("%i\n", n);
     printf("\nDIGIT ONLY \n");
-    printf("RL %d", 0);
-    ft_printf("FT %d", 3);
+    printf("RL %d\n", 50);
+    ft_printf("FT %d\n", 50);
     printf("\n");
     printf("\n\nDOT \n");
-	printf("RL %.d\n", 0);
-    printf("RL %.d\n", 1);
+	printf("RL %.1d\n", 0);
+    ft_printf("FT %.1d\n", 0);
+    printf("\n");
+    printf("RL %10.0d\n", 1);
+    ft_printf("FT %10.0d\n", 1);
+    printf("\n");
     ft_printf("FT %.d\n", 30);
     printf("\n");
     printf("RL %.0d\n", 30);
@@ -190,16 +209,28 @@ int main()
 	printf("RL %3.2d\n", 3);
     ft_printf("FT %3.2d\n", 3);
     printf("\n");
+
 	printf("RL %-3.2d %10.42d\n", 3, 0);
     ft_printf("FT %-3.2d %10.42d\n", 3, 0);
+
     printf("\n");
-	printf("RL %-3.2d %10.42d\n", 1, -1);
-    ft_printf("FT %-3.2d %10.42d\n", 1, -1);
+	printf("RL %11.42d\n", -20);
+    ft_printf("FT %11.42d\n", -20);
     printf("\n");
-	printf("RL %-10.2d %10.42d\n", 10, -10);
-    printf("FT %-10.2d %10.42d\n", 10, -10);
-    //num = char_to_int(str);
+	printf("RL %11.42d\n",-12);
+    ft_printf("FT %11.42d\n", -12);
+//     //num = char_to_int(str);
     //printf("%i\n", num);
-    
+    //  printf("RL: 0*%0-*.*d*0 0*%-0*.*d*0\n", 6, 2, 102, 10, 21, -101);
+    // ft_printf("FT: 0*%0-*.*d*0 0*%0*.*d*0", 6, 2, 102, 10, 21, -101);
+    printf("\n");
+    printf("RL: %-09d\n", 2554);
+    ft_printf("FT: %-09d\n", 2554);
+    printf("\n");
+    printf("RL: %09d\n", 2554);
+    ft_printf("FT: %09d\n", 2554);
+     printf("\n");
+     printf("RL: %09d\n", -2554);
+     ft_printf("FT: %09d\n", -2554);
     return 0;
 }

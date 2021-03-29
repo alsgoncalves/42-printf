@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 10:22:40 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 17:27:37 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:58:45 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int		ft_treat_precision(int precision, char *str, int *char_count)
 
 	temp = *char_count;
 	i = 0;
-	// if (precision == 0)
-	// 	return (*char_count);
 	if (precision < (int)ft_strlen(str))
 	{
 		while (precision)

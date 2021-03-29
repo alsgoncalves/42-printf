@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 15:41:52 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/28 22:24:57 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:10:31 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,29 @@ int 	ft_treat_d(va_list ap, t_flag *flags)
 	char_count = 0;
 	ft_convert_stars(flags, ap);
 	i = va_arg(ap, int);
-	str = ft_itoa(i);
-	if (i == 0 && !flags->dot)
-	{
-		//char_count = ft_treat_width(flags->width, 0, 0, &char_count);
+	if (i == 0 && flags->dot && !flags->precision_value)
 		return (char_count);
+	if (i < 0)
+	{
+		ft_putchar('-');
+		i *= -1;
+		flags->width -= 1;
+		char_count++;
 	}
+	str = ft_itoa(i);
 	if (flags->minus)
+	{
 		char_count = put_prec(flags, str, &char_count);
-	if (flags->width > flags->precision_value)
+		flags->zero = 0;
+		//flags->minus = 0;
+	}
+	if (flags->width && flags->zero && !flags->dot)
+	{
+		char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 1, &char_count);
+	}	
+	if (flags->width < flags->precision_value)
+		flags->width = 0;
+	if (flags->width > flags->precision_value && flags->dot)
 	{
 		if (flags->precision_value <= (int)ft_strlen(str))
 			char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 0, &char_count);

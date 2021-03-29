@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:39:13 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 18:51:41 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/29 13:19:20 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		ft_treat_str(va_list ap, t_flag *flags)
 	str = va_arg(ap, char *);
 	if (str == NULL)
 		str = "(null)";
-	if (flags->precision_value > flags->width && flags->dot)
+	if (flags->precision_value > flags->width )
 	{
 		if (flags->minus)
 			char_count = ft_treat_precision(flags->precision_value, str, &char_count);
