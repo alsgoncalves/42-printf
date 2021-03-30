@@ -171,16 +171,16 @@ int main()
     //  printf("RL: %-c%-c%c*\n", 1, '0', 0);
     //  ft_printf("FT: %-c%-c%c*\n", 1, '0', 0);
 
-    //  printf("\n TEST MINE \n");
-    // i = ft_printf("%.-4s", NULL);
-    // printf("%i\n", i);
-    // n = printf("%.-4s", NULL);
-    // printf("%i\n", n);
-    printf("\nDIGIT ONLY \n");
-    printf("RL %d\n", 50);
-    ft_printf("FT %d\n", 50);
-    printf("\n");
-    printf("\n\nDOT \n");
+//     //  printf("\n TEST MINE \n");
+//     // i = ft_printf("%.-4s", NULL);
+//     // printf("%i\n", i);
+//     // n = printf("%.-4s", NULL);
+//     // printf("%i\n", n);
+//     printf("\nDIGIT ONLY \n");
+//     printf("RL %d\n", 50);
+//     ft_printf("FT %d\n", 50);
+//     printf("\n");
+    printf("\nDOT \n");
 	printf("RL %.1d\n", 0);
     ft_printf("FT %.1d\n", 0);
     printf("\n");
@@ -219,10 +219,31 @@ int main()
     printf("\n");
 	printf("RL %11.42d\n",-12);
     ft_printf("FT %11.42d\n", -12);
-//     //num = char_to_int(str);
-    //printf("%i\n", num);
-    //  printf("RL: 0*%0-*.*d*0 0*%-0*.*d*0\n", 6, 2, 102, 10, 21, -101);
-    // ft_printf("FT: 0*%0-*.*d*0 0*%0*.*d*0", 6, 2, 102, 10, 21, -101);
+
+    printf("\n\nZERO W/ PRECISION \n");
+    printf("RL %021.10d\n", -20);
+    ft_printf("FT %021.10d\n", -20);
+    printf("\n");
+
+    //num = char_to_int(str);
+   // printf("%i\n", num);
+     printf("RL: 0*%0-*.*d*0 0*%-0*.*d*0\n", 6, 2, 102, 10, 21, -101);
+    ft_printf("FT: 0*%0-*.*d*0 0*%0*.*d*0", 6, 2, 102, 10, 21, -101);
+    printf("\n");
+    printf("RL: %0-*.*d\n", 6, 2, 102);
+    ft_printf("FT: %0-*.*d\n", 6, 2, 102);
+    printf("\n");
+    printf("RL:%-0*.*d\n", 10, 21, -101);
+    ft_printf("FT:%-0*.*d\n", 10, 21, -101);
+
+     printf("RL:%-0*.*d\n", 10, 21, 101);
+    ft_printf("FT:%-0*.*d\n", 10, 21, 101);
+
+    printf("RL: 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
+    ft_printf("FT: 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
+    printf("\n");
+	printf("RL: %0*d*0\n", 21, -1011);
+    ft_printf("FT: %0*d*0\n", 21, -1011);
     printf("\n");
     printf("RL: %-09d\n", 2554);
     ft_printf("FT: %-09d\n", 2554);
@@ -232,5 +253,7 @@ int main()
      printf("\n");
      printf("RL: %09d\n", -2554);
      ft_printf("FT: %09d\n", -2554);
-    return 0;
+    printf("RL 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
+    ft_printf("FT 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
+     return 0;
 }

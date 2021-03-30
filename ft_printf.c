@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 17:58:34 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:32:37 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,24 +77,28 @@ int     ft_check_flags(const char *format, t_flag *flags)
     int i;
 
     i = 0;
+   
     while (format[i])
     {   
         if (format[i] == '-')
-            flags->minus = 1;
-        if (format[i] == '0' && flags->width == 0)
+             flags->minus = 1;
+        else if (format[i] == '0')
             flags->zero = 1;
-        if (format[i] == '*')
+        else if (format[i] == '*')
             flags->width_star = 1;
-        if (is_num(format[i]))
+        else if (is_num(format[i]))
             flags->width = char_to_int((char *)format, &i);
         if (format[i] == '.' && format[i + 1])
         {
             flags->dot = 1;
-            i++;
-            if (format[i] == '*')
+            if (format[i + 1] == '*')
                 flags->precision_star = 1;
             else
+            {
+                i++;
                 flags->precision_value = char_to_int((char *)format, &i);
+                i--;
+            }
         }
         if (ft_check_type(format[i]))
         {
@@ -129,6 +133,14 @@ int ft_printf(const char *format, ...)
                 format++;
             }
             char_count += ft_treat_flags(ap, &flags);
+            // printf("ZERO = %i\n", flags.zero);
+            // printf("MINUS = %i\n", flags.minus);
+            // printf("TYPE = %c\n", flags.type);
+            // printf("DOT = %i\n", flags.dot);
+            // printf("Precision = %i\n", flags.precision_value);
+            // printf("Width = %i\n", flags.width);
+            // printf("Precison_star = %i\n", flags.precision_star);
+            // printf("width_star = %i\n", flags.width_star);
             flags = ft_initialize_flags();
         }
         else
@@ -139,14 +151,7 @@ int ft_printf(const char *format, ...)
         format++;
     }
     
-    // printf("ZERO = %i\n", flags.zero);
-    // printf("MINUS = %i\n", flags.minus);
-    // printf("TYPE = %c\n", flags.type);
-    // printf("DOT = %i\n", flags.dot);
-    // printf("Precision = %i\n", flags.precision_value);
-    // printf("Width = %i\n", flags.width);
-    // printf("Precison_star = %i\n", flags.precision_star);
-    // printf("star = %i\n", flags.width_star);
+    
     va_end(ap);
     // To return total number of chars displayed by printf
     return (char_count);

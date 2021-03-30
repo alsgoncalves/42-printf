@@ -6,7 +6,7 @@
 #    By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 12:16:48 by asobreir          #+#    #+#              #
-#    Updated: 2021/03/24 15:24:05 by asobreir         ###   ########.fr        #
+#    Updated: 2021/03/30 17:15:06 by asobreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT = libft
 
 CC = gcc
 
-FLAGS := -Wall -Wextra -Werror
+FLAGS := -Wall -Wextra -Werror -g
 
 RM = rm -f
 
