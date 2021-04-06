@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/28 16:17:34 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/02 11:06:25 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_treat_flags(va_list ap, t_flag *flags);
 int		ft_treat_char(va_list ap, t_flag *flags);
 int		ft_treat_width(int width, int minus, int has_zero, int *char_count);
 int		is_num(char c);
-int     char_to_int(char *str, int *n);
+// int     char_to_int(char *str, int *n);
 t_flag  ft_initialize_flags(void);
 char    ft_check_type(char c);
 int     ft_check_flags(const char *format, t_flag *flags);

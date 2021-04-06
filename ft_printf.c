@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/30 16:32:37 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/05 12:18:24 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,19 @@ int     ft_check_flags(const char *format, t_flag *flags)
     int i;
 
     i = 0;
-   
     while (format[i])
     {   
         if (format[i] == '-')
-             flags->minus = 1;
+            flags->minus = 1; 
         else if (format[i] == '0')
             flags->zero = 1;
-        else if (format[i] == '*')
+        else if (format[i] == '*' && !flags->dot)
             flags->width_star = 1;
         else if (is_num(format[i]))
+        {
             flags->width = char_to_int((char *)format, &i);
+            //printf("WIDTH %i\n", flags->width);
+        }
         if (format[i] == '.' && format[i + 1])
         {
             flags->dot = 1;
@@ -97,16 +99,18 @@ int     ft_check_flags(const char *format, t_flag *flags)
             {
                 i++;
                 flags->precision_value = char_to_int((char *)format, &i);
+                //printf("PREC %i\n", flags->precision_value);
                 i--;
             }
         }
-        if (ft_check_type(format[i]))
+        else if (ft_check_type(format[i]))
         {
             flags->type = format[i];
             break ;
         }
         i++;
     }
+    //printf("\nCHAR COUNT IN PRINTF : %i\n", i);
     return (i);
 }
 

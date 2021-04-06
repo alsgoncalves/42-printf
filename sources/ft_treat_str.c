@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:39:13 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/29 13:19:20 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/02 10:19:31 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		if_no_precision(t_flag *flags, char *str, int *char_count)
 		if (flags->width)
 		{
 			if (flags->width > (int)ft_strlen(str))
-				*char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 0, *(&char_count));
+				*char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 1, *(&char_count));
 			if (flags->minus == 0)
 				*char_count += ft_putstr(str);
 		}
@@ -39,16 +39,16 @@ int		if_prec_less_than_width(t_flag *flags, char *str, int *char_count)
 		{	
 			*char_count = ft_treat_precision(flags->precision_value, str, *(&char_count));
 			if (flags->precision_value < (int)ft_strlen(str))
-				*char_count = ft_treat_width(flags->width, flags->precision_value, 0, *(&char_count));
+				*char_count = ft_treat_width(flags->width, flags->precision_value, 1, *(&char_count));
 			else 
-				*char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 0, *(&char_count));
+				*char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 1, *(&char_count));
 		}
 		else
 		{
 			if (flags->precision_value < (int)ft_strlen(str))
-				*char_count = ft_treat_width(flags->width, flags->precision_value, 0, *(&char_count));
+				*char_count = ft_treat_width(flags->width, flags->precision_value, 1, *(&char_count));
 			else 
-				*char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 0, *(&char_count));
+				*char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 1, *(&char_count));
 			*char_count = ft_treat_precision(flags->precision_value, str, *(&char_count));
 		}
 	}
@@ -70,7 +70,7 @@ int		ft_treat_str(va_list ap, t_flag *flags)
 		if (flags->minus)
 			char_count = ft_treat_precision(flags->precision_value, str, &char_count);
 		if (flags->width > (int)ft_strlen(str))
-			char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 0, &char_count);
+			char_count = ft_treat_width(flags->width, (int)ft_strlen(str), 1, &char_count);
 		if (!flags->minus)
 			char_count = ft_treat_precision(flags->precision_value, str, &char_count);
 	}

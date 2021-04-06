@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:41:42 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/26 18:37:18 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/02 10:19:54 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int		ft_treat_char(va_list ap, t_flag *flags)
 		{
 			c = va_arg(ap, int);
 			ft_putchar(c);
-			char_count = ft_treat_width(flags->width, 1, 0, &char_count) + 1;
+			char_count = ft_treat_width(flags->width, 1, 1, &char_count) + 1;
 		}
 		else
 		{
 			c = va_arg(ap, int);
-			char_count = ft_treat_width(flags->width, 1, 0, &char_count) + 1;
+			char_count = ft_treat_width(flags->width, 1, 1, &char_count) + 1;
 			ft_putchar(c);
 		}
 	}

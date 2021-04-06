@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 18:36:20 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/30 16:12:47 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/05 11:52:04 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_convert_stars(t_flag *flags, va_list ap)
 {
+	//printf("flags->width_star : %i\n", flags->width_star);
+	//printf("width before if : %i\n", flags->width);
 	if (flags->width_star)
 	{
 		flags->width = va_arg(ap, int);
+		//printf("CONV STARS width : %i\n", flags->width);
 		if (flags->width < 0)
 		{
 			flags->minus = 1;
@@ -26,13 +29,8 @@ void	ft_convert_stars(t_flag *flags, va_list ap)
 	if (flags->precision_star)
 	{
 		flags->precision_value = va_arg(ap, int);
+		//printf("CONV STARS : %i\n", flags->precision_value);
 		if (flags->precision_value < 0)
-		{
-			//if (flags->type == 's')
-				flags->dot = 0;
-			// 	flags->minus = 1;
-			
-			//flags->precision_value *= -1;
-		}	
+			flags->dot = 0;	
 	}
 }

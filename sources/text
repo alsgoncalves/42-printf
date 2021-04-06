@@ -1,0 +1,11 @@
+- Se existir (.) (flags->dot) e o valor for inferior à length da string, então :
+    flags->precision_value = ft_strlen(str);
+
+Para valores de d positivos:
+    - Se a precision_value for maior que a strlen, precision_value - strlen(str) é preenchida com '0'.
+
+Para valores de d negativos:
+    - Imprime-se um sinal de '-' e transforma-se o valor de d em positivo. A impressão do '-' nao altera
+    nenhum valor se nao existir width.
+        Caso exista width, deduz 1 valor à width.
+    - Se a precision_value for maior que a strlen, precision_value - strlen(str) é preenchida com '0'.

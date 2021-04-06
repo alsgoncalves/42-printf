@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 10:22:40 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/29 11:58:45 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/06 11:43:19 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_treat_precision(int precision, char *str, int *char_count)
 			precision--;
 		}
 	}
-	else 
+	else
 		temp += ft_putstr(str);
 	*char_count = temp;
 	return (*char_count);
