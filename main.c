@@ -182,8 +182,8 @@ int main()
 //     ft_printf("FT %d\n", 50);
 //     printf("\n");
 //     printf("\nDOT \n");
-	printf("RL %.1d\n", 0);
-    ft_printf("FT %.1d\n", 0);
+	// printf("RL %.1d\n", 0);
+    // ft_printf("FT %.1d\n", 0);
 //     printf("\n");
 //     printf("RL %10.0d\n", 1);
 //     ft_printf("FT %10.0d\n", 1);
@@ -286,26 +286,26 @@ int main()
 // 	printf("RL: --0*%0*.0d*0 0*%0*.10d*0-- \n", -2, 0, 21, 1);
 //     ft_printf("FT: --0*%0*.0d*0 0*%0*.10d*0-- \n", -2, 0, 21, 1);
 
-    printf("\n");
-	printf("RL: %*.0d* \n", -10, 0);
-    ft_printf("FT: %*.0d* \n", -10, 0);
+    // printf("\n");
+	// printf("RL: %*.0d* \n", -10, 0);
+    // ft_printf("FT: %*.0d* \n", -10, 0);
 
-    printf("\n");
-	printf("RL: %0*.10d*0-- \n", 21, 1);
-    ft_printf("FT: %0*.10d*0-- \n", 21, 1);
+    // printf("\n");
+	// printf("RL: %0*.10d*0-- \n", 21, 1);
+    // ft_printf("FT: %0*.10d*0-- \n", 21, 1);
 
-     printf("RL: %-0*.0d*\n", 10, -1011);
-    ft_printf("FT: %-0*.0d*\n", 10, -1011);
-    printf("\n");
-    printf("xx %10.2d**\n", 0);
-    ft_printf("oo %10.2d**\n", 0);
+    //  printf("RL: %-0*.0d*\n", 10, -1011);
+    // ft_printf("FT: %-0*.0d*\n", 10, -1011);
+    // printf("\n");
+    // printf("xx %10.2d**\n", 0);
+    // ft_printf("oo %10.2d**\n", 0);
 
-    printf("\n");
-    printf("%d\n", 0);
-    ft_printf("%d\n", 0);
+    // printf("\n");
+    // printf("%d\n", 0);
+    // ft_printf("%d\n", 0);
 
-    // printf(" --0*%0*.0d*0 0*%0*.10d*0--\n", -21, INT_MAX, 21, INT_MIN);
-    // ft_printf(" --0*%0*.0d*0 0*%0*.10d*0--\n", -21, INT_MAX, 21, INT_MIN);
+    printf(" --0*%0*.0d*0 0*%0*.10d*0--\n", -21, INT_MAX, 21, INT_MIN);
+    ft_printf(" --0*%0*.0d*0 0*%0*.10d*0--\n", -21, INT_MAX, 21, INT_MIN);
     printf(" 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
     ft_printf(" 0*%0-*.*d*0 0*%0*.*d*0\n", 2, 6, 102, 21, 10, -101);
     printf("\n");
@@ -314,6 +314,12 @@ int main()
     printf("\n");
     printf("RL %10.d\n", UINT_MAX);
     ft_printf("FT %10.d\n", UINT_MAX);
+    printf("\n");
+    printf("RL %10.1d\n", -1);
+    ft_printf("FT %10.1d\n", -1);
+    printf("RL %10.2d\n", -1);
+    ft_printf("FT %10.2d\n", -1);
+    printf("\n");
     printf("\n");
 	printf("RL %.2d\n", -10);
     ft_printf("FT %.2d\n", -10);
@@ -332,8 +338,12 @@ int main()
     ft_printf("FT %10.3d\n", UINT_MAX);
 
      printf("\n");
-    printf("RL--0*%-0*.4d*0 0*%-0*.4d*0--\n", -21, CHAR_MAX, 21, CHAR_MIN);
-    ft_printf("FT--0*%-0*.4d*0 0*%-0*.4d*0--\n", -21, CHAR_MAX, 21, CHAR_MIN);
+    printf("RL %-0*.4d*0\n", 21, CHAR_MIN);
+    ft_printf("FT %-0*.4d*0\n", 21, CHAR_MIN);
+
+    printf("\n");
+    printf("RL %-0*.5d*0\n", 10, -128);
+    ft_printf("FT %-0*.5d*0\n", 10, -128);
      printf("\n");
 	printf("RL %9.2d\n", UINT_MAX);
     ft_printf("FT %9.2d\n", UINT_MAX);
