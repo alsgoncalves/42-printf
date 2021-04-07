@@ -6,7 +6,7 @@
 #    By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/13 16:43:30 by asobreir          #+#    #+#              #
-#    Updated: 2021/03/24 15:37:30 by asobreir         ###   ########.fr        #
+#    Updated: 2021/04/07 15:27:32 by asobreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRCS= ft_atoi.c \
 			ft_toupper.c \
 			ft_putchar_bonus.c \
 			ft_putstr_bonus.c \
+			ft_utoa.c \
 
 SRCS_B= ft_lstadd_back.c \
 			ft_lstadd_front.c \

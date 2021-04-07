@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 16:46:18 by asobreir          #+#    #+#             */
-/*   Updated: 2021/03/25 15:02:11 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/07 15:26:00 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct	s_list
 
 void			ft_putchar(char c);
 int				ft_putstr(char *s);
+char			*ft_utoa(unsigned int n);
 void			*ft_memset(void *str, int c, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
