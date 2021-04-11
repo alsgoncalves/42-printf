@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/07 15:34:19 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/11 10:41:45 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,10 @@ void	flag_conversions(t_flag *flags);
 // int		put_prec(t_flag *flags, int *i, char *str, int *char_count);
 // int		handle_width_d_i(t_flag *flags, int *i, char *str, int *char_count);
 int 	ft_treat_u(va_list ap, t_flag *flags);
+int		handle_width_u(t_flag *flags, unsigned int *i, char *str, int *char_count);
+int		put_prec_u(t_flag *flags, unsigned int *i, char *str, int *char_count);
+int 	conv_neg_prec_u(char *str, unsigned int *i, int *char_count);
+int 	ft_treat_x(va_list ap, t_flag *flags, char a);
+char	*ft_xtoa(unsigned int n, char a);
 
 #endif

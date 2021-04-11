@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:12:26 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/07 14:23:07 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/11 10:24:09 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int ft_treat_flags(va_list ap, t_flag *flags)
 		return (ft_treat_d_i(ap, flags));
 	if (flags->type == 'u')
 		return (ft_treat_u(ap, flags));
-	// if (flags->type == 'x')
-	// 	//
-	// if (flags->type == 'X')
-	// 	//
+	if (flags->type == 'x')
+		return (ft_treat_x(ap, flags, 'x'));
+	if (flags->type == 'X')
+		return (ft_treat_x(ap, flags, 'X'));
 	// if (flags->type == '%')
 	// 	//
 	return (0);

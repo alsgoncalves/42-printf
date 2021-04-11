@@ -382,7 +382,25 @@ int main()
 	// printf("RL *%-*.*u* *%*.*u*\n", 6, 2, 102, 10, 21, -101);
     // ft_printf("FT *%-*.*u* *%*.*u*\n", 6, 2, 102, 10, 21, -101);
 
-    printf("%9.10x", UINT_MAX);
+    // printf("%9.10x\n", UINT_MAX);
+    // printf("\n");
+    // printf("FT %X\n", 2545);
+    // ft_printf("RL %X\n", 2545);
+    // printf("\n");
+    // printf("%X\n", 1234567);
+    // printf("%X\n", 9987632);
+    // printf("RL %X\n", -1234);
+    // ft_printf("FT %X\n", -1234);
+
+    printf("RL %-3.2x %10.42x\n", 10, -10);
+    ft_printf("FT %-3.2x %10.42x\n", 10, -10);
+    printf("\n");
+	printf("RL *%-*.*x* *%*.*x*\n", 4, 5, 10, 10, 21, -10);
+    ft_printf("FT *%-*.*x* *%*.*x*\n", 4, 5, 10, 10, 21, -10);
+    printf("\n");
+	printf("RL *%-*.*x* *%*.*x*\n", 6, 2, 102, 10, 21, -101);
+    printf("FT *%-*.*x* *%*.*x*\n", 6, 2, 102, 10, 21, -101);
+    printf("\n");
 
      return 0;
 }

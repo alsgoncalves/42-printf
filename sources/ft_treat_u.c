@@ -6,12 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:17:26 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/07 15:34:11 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/08 15:43:27 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
 
 int 	conv_neg_prec_u(char *str, unsigned int *i, int *char_count)
 {
