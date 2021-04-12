@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/11 10:41:45 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:08:22 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef	struct	s_flag
 }				t_flag;
 
 int		ft_treat_flags(va_list ap, t_flag *flags);
-int		ft_treat_char(va_list ap, t_flag *flags);
+int		ft_treat_char(va_list ap, t_flag *flags, char a);
 int		ft_treat_width(int width, int minus, int has_zero, int *char_count);
 int		is_num(char c);
 t_flag  ft_initialize_flags(void);
@@ -53,6 +53,8 @@ int		handle_width_u(t_flag *flags, unsigned int *i, char *str, int *char_count);
 int		put_prec_u(t_flag *flags, unsigned int *i, char *str, int *char_count);
 int 	conv_neg_prec_u(char *str, unsigned int *i, int *char_count);
 int 	ft_treat_x(va_list ap, t_flag *flags, char a);
+//char	*ft_xtoa(unsigned int n, char a);
 char	*ft_xtoa(unsigned int n, char a);
+int		ft_treat_p(va_list ap, t_flag *flags, char a);
 
 #endif

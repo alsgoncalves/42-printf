@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:40:35 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/11 22:17:02 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/12 16:52:33 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,12 @@ char	*ft_xtoa(unsigned int n, char a)
 	str = ft_print_x(n, a);
 	return (ft_print_correct_order(str, ft_strlen(str)));
 }
+
+// int main()
+// {
+// 	char *str;
+
+// 	str = ft_xtoa(54333, 'x');
+// 	printf("str: %s", str);
+// 	return 0;
+// }

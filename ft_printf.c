@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/07 11:31:33 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/12 17:15:13 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ int ft_printf(const char *format, ...)
         if (*format == '%')
         {
             i = ft_check_flags((format + 1), &flags);
+            format++;
             while (*format != flags.type)
             {
                 format++;

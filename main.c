@@ -392,15 +392,49 @@ int main()
     // printf("RL %X\n", -1234);
     // ft_printf("FT %X\n", -1234);
 
-    printf("RL %-3.2x %10.42x\n", 10, -10);
-    ft_printf("FT %-3.2x %10.42x\n", 10, -10);
+    // printf("RL %-3.2x %10.42x\n", 10, -10);
+    // ft_printf("FT %-3.2x %10.42x\n", 10, -10);
+    // printf("\n");
+	// printf("RL *%-*.*x* *%*.*x*\n", 4, 5, 10, 10, 21, -10);
+    // ft_printf("FT *%-*.*x* *%*.*x*\n", 4, 5, 10, 10, 21, -10);
+    // printf("\n");
+	// printf("RL *%-*.*x* *%*.*x*\n", 6, 2, 102, 10, 21, -101);
+    // printf("FT *%-*.*x* *%*.*x*\n", 6, 2, 102, 10, 21, -101);
+    // printf("\n");
+   
+    // printf("RL %p\n", 1709);
+    // ft_printf("FT %p\n", 1709);
+    // printf("\n");
+	// printf("RL %20p\n", 5432);
+    // ft_printf("FT %20p\n", 5432);
+    // printf("\n");
+    // printf("RL %x\n", 54333);
+    // ft_printf("FT %x\n", 54333);
+    // printf("\n");
+    // int v;
+    // int u;
+    
+    // v = printf("RL %10p %10p\n", 1, -1);
+    // printf("v: %d", v);
+    // u = ft_printf("FT %10p %10p\n", 1, -1);
+    // printf("u: %d", u);
+    // printf("\n");
+	// printf("RL %10p %-10p\n", 1, -1);
+    // ft_printf("FT %10p %-10p\n", 1, -1);
+	// printf("RL %p %p\n", LONG_MIN, LONG_MAX);
+    // ft_printf("FT %p %p\n", LONG_MIN, LONG_MAX);
+    // printf("\n");
+	// printf("RL %p %p\n", ULONG_MAX, -ULONG_MAX);
+    // ft_printf("FT %p %p\n", ULONG_MAX, -ULONG_MAX);
+    // printf(" %-20p\n", -1);
+    // printf(" %-20p\n", 1);
+	// printf("%20p\n", 1);
+    printf("RL %% %%\n");
+    ft_printf("FT %% %%\n");
+
     printf("\n");
-	printf("RL *%-*.*x* *%*.*x*\n", 4, 5, 10, 10, 21, -10);
-    ft_printf("FT *%-*.*x* *%*.*x*\n", 4, 5, 10, 10, 21, -10);
-    printf("\n");
-	printf("RL *%-*.*x* *%*.*x*\n", 6, 2, 102, 10, 21, -101);
-    printf("FT *%-*.*x* *%*.*x*\n", 6, 2, 102, 10, 21, -101);
-    printf("\n");
+    printf("RL %10% %010%\n");
+    printf("RL %-10%\n");
 
      return 0;
 }
