@@ -1,34 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_stars.c                                 :+:      :+:    :+:   */
+/*   ft_char_to_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 18:36:20 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/13 11:42:08 by asobreir         ###   ########.fr       */
+/*   Created: 2021/04/13 11:33:45 by asobreir          #+#    #+#             */
+/*   Updated: 2021/04/13 11:40:46 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_convert_stars(t_flag *flags, va_list ap)
+int	is_num(char c)
 {
-	if (flags->width_star)
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
+int	char_to_int(char *str, int *n)
+{
+	int	num;
+	int	i;
+
+	i = *n;
+	num = 0;
+	while (str[i])
 	{
-		flags->width = va_arg(ap, int);
-		if (flags->width < 0)
+		if (is_num(str[i]))
 		{
-			flags->minus = 1;
-			flags->width *= -1;
+			num += str[i] - '0';
+			while (is_num(str[i + 1]))
+			{
+				num = (num * 10) + (str[i + 1] - '0');
+				i++;
+			}
 		}
+		if (!is_num(str[i]))
+			break ;
+		i++;
 	}
-	if (flags->precision_star)
-	{
-		flags->precision_value = va_arg(ap, int);
-		if (flags->precision_value < 0)
-		{
-			flags->dot = 0;
-		}
-	}
+	*n = i;
+	return (num);
 }

@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/12 17:08:22 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/13 11:34:49 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,16 @@ typedef	struct	s_flag
 	char	type;
 }				t_flag;
 
+
+int	is_num(char c);
+int	char_to_int(char *str, int *n);
 int		ft_treat_flags(va_list ap, t_flag *flags);
 int		ft_treat_char(va_list ap, t_flag *flags, char a);
 int		ft_treat_width(int width, int minus, int has_zero, int *char_count);
 int		is_num(char c);
 t_flag  ft_initialize_flags(void);
 char    ft_check_type(char c);
-int     ft_check_flags(const char *format, t_flag *flags);
+void     ft_check_flags(const char *format, t_flag *flags);
 int		ft_printf(const char *format, ...);
 int		ft_treat_str(va_list ap, t_flag *flags);
 int		ft_treat_precision(int precision, char *str, int *char_count);
