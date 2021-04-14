@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:25:05 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/14 17:35:09 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:13:41 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ int		n_length_u(unsigned int n)
 	int length;
 
 	length = 0;
-	if (n % 10 >= 0)
-		length++;
 	while (n /= 10)
 		length++;
+	length++;
 	return (length);
 }
 
