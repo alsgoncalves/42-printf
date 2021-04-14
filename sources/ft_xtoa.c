@@ -6,19 +6,19 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:40:35 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/14 15:45:57 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/14 22:05:06 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_print_x(unsigned int n, char a)
+char	*ft_print_x(unsigned long n, char a)
 {
 	int		i;
 	int		temp;
 	char	*hexadecimalnum;
 
-	hexadecimalnum = malloc(100 * sizeof(char));
+	hexadecimalnum = ft_calloc(100, sizeof(char));
 	i = 0;
 	while (n != 0)
 	{
@@ -53,7 +53,7 @@ char	*ft_print_correct_order(char *str, int str_len)
 	return (str);
 }
 
-char	*ft_xtoa(unsigned int n, char a)
+char	*ft_xtoa(unsigned long n, char a)
 {
 	char	*str;
 

@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:31:10 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/14 16:11:33 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/14 22:02:57 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		put_prec_u(t_flag *flags, unsigned int *i, char *str, int *char_count);
 int 	conv_neg_prec_u(char *str, unsigned int *i, int *char_count);
 int 	ft_treat_x(va_list ap, t_flag *flags, char a);
 //char	*ft_xtoa(unsigned int n, char a);
-char	*ft_xtoa(unsigned int n, char a);
+char	*ft_xtoa(unsigned long n, char a);
 int	ft_treat_pointer(va_list ap, t_flag *flags, char a);
 int	ft_conv_args_i(va_list ap, t_flag *flags);
 void	ft_flag_conversions(t_flag *flags);
