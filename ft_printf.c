@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:49:08 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/13 11:36:03 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/14 11:08:14 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_flag	ft_initialize_flags(void)
 	flags.minus = 0;
 	flags.width_star = 0;
 	flags.dot = 0;
-	flags.precision_value = -1;
+	flags.prec_val = -1;
 	flags.precision_star = 0;
 	flags.type = 0;
 	return (flags);
@@ -59,7 +59,7 @@ void	ft_check_flags(const char *format, t_flag *flags)
 			else
 			{
 				i++;
-				flags->precision_value = char_to_int((char *)format, &i);
+				flags->prec_val = char_to_int((char *)format, &i);
 				i--;
 			}
 		}

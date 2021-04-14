@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_stars.c                                 :+:      :+:    :+:   */
+/*   ft_conversions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 18:36:20 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/13 11:42:08 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:50:39 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,28 @@ void	ft_convert_stars(t_flag *flags, va_list ap)
 	}
 	if (flags->precision_star)
 	{
-		flags->precision_value = va_arg(ap, int);
-		if (flags->precision_value < 0)
+		flags->prec_val = va_arg(ap, int);
+		if (flags->prec_val < 0)
 		{
 			flags->dot = 0;
 		}
 	}
+}
+
+void	ft_flag_conversions(t_flag *flags)
+{
+	if (flags->width < flags->prec_val)
+		flags->width = 0;
+	if (flags->minus && flags->zero)
+		flags->zero = 0;
+}
+
+int	ft_conv_args_i(va_list ap, t_flag *flags)
+{
+	int	i;
+
+	ft_convert_stars(flags, ap);
+	i = va_arg(ap, int);
+	ft_flag_conversions(flags);
+	return (i);
 }

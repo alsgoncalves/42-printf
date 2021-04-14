@@ -6,12 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 15:40:35 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/12 16:52:33 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:45:57 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <string.h>
 
 char	*ft_print_x(unsigned int n, char a)
 {
@@ -37,9 +36,9 @@ char	*ft_print_x(unsigned int n, char a)
 
 char	*ft_print_correct_order(char *str, int str_len)
 {
-	int i;
-	int j;
-	int temp;
+	int	i;
+	int	j;
+	int	temp;
 
 	j = 0;
 	i = str_len - 1;
@@ -56,19 +55,10 @@ char	*ft_print_correct_order(char *str, int str_len)
 
 char	*ft_xtoa(unsigned int n, char a)
 {
-	char *str;
+	char	*str;
 
 	if (n == 0)
 		return (ft_strdup("0"));
 	str = ft_print_x(n, a);
 	return (ft_print_correct_order(str, ft_strlen(str)));
 }
-
-// int main()
-// {
-// 	char *str;
-
-// 	str = ft_xtoa(54333, 'x');
-// 	printf("str: %s", str);
-// 	return 0;
-// }
