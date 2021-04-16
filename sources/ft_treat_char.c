@@ -6,7 +6,7 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:41:42 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/16 16:54:20 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 19:01:41 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@ char	ft_check_char(t_flag *flags, va_list ap, char a)
 	return (c);
 }
 
+void	ft_treat_char_width(t_flag *flags, char c, int *char_count)
+{
+	if (flags->zero && c == '%')
+		*char_count = ft_treat_width(flags->width, 1, 0, *(&char_count)) + 1;
+	else
+		*char_count = ft_treat_width(flags->width, 1, 1, *(&char_count)) + 1;
+	ft_putchar(c);
+}
+
 int	ft_treat_char(va_list ap, t_flag *flags, char a)
 {
 	int		char_count;
@@ -41,13 +50,7 @@ int	ft_treat_char(va_list ap, t_flag *flags, char a)
 			char_count = ft_treat_width(flags->width, 1, 1, &char_count) + 1;
 		}
 		else
-		{
-			if (flags->zero && c == '%')
-				char_count = ft_treat_width(flags->width, 1, 0, &char_count) + 1;
-			else
-				char_count = ft_treat_width(flags->width, 1, 1, &char_count) + 1;
-			ft_putchar(c);
-		}
+			ft_treat_char_width(flags, c, &char_count);
 	}
 	else
 	{
