@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asobreir <asobreir@42lisboa.com>           +#+  +:+       +#+        */
+/*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 15:47:23 by asobreir          #+#    #+#             */
-/*   Updated: 2021/02/15 15:48:19 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 13:31:29 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *p;
+	void	*p;
 
 	p = malloc(count * size);
 	if (p == NULL)

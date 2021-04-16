@@ -6,11 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 18:36:20 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/14 15:50:39 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:26:00 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_convert_stars(t_flag *flags, va_list ap)
 {
@@ -49,4 +49,13 @@ int	ft_conv_args_i(va_list ap, t_flag *flags)
 	i = va_arg(ap, int);
 	ft_flag_conversions(flags);
 	return (i);
+}
+
+char	ft_check_type(char c)
+{
+	if (c == 'c' || c == 's' || c == 'p'
+		|| c == 'd' || c == 'i' || c == 'u'
+		|| c == 'x' || c == 'X' || c == '%')
+		return (c);
+	return (0);
 }

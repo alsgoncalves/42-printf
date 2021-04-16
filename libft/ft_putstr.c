@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asobreir <asobreir@42lisboa.com>           +#+  +:+       +#+        */
+/*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 12:37:18 by asobreir          #+#    #+#             */
-/*   Updated: 2021/02/24 12:38:09 by asobreir         ###   ########.fr       */
+/*   Created: 2021/03/24 12:49:09 by asobreir          #+#    #+#             */
+/*   Updated: 2021/04/16 14:44:28 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_putstr(char *s)
 {
-    t_list *temp;
+	int	char_count;
 
-    temp = lst;
-    while (temp)
-    {
-        f(temp->content);
-        temp = temp->next;
-    }
+	char_count = 0;
+	while (*s)
+	{
+		write(1, s, 1);
+		char_count++;
+		s++;
+	}
+	return (char_count);
 }

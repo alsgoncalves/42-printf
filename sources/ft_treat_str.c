@@ -6,11 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:39:13 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/14 15:50:12 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 13:16:56 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	if_no_precision(t_flag *flags, char *str, int *char_cnt)
 {

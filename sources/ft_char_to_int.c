@@ -6,11 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 11:33:45 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/13 11:40:46 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 13:17:41 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	is_num(char c)
 {

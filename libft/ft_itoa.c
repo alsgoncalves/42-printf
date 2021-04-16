@@ -3,24 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asobreir <asobreir@42lisboa.com>           +#+  +:+       +#+        */
+/*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 19:03:56 by asobreir          #+#    #+#             */
-/*   Updated: 2021/02/16 19:04:35 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 14:42:05 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		n_length(int n)
+#include <stdio.h> // to be removed
+
+int	n_length(int n)
 {
-	int length;
+	int	length;
 
 	length = 0;
-	if (n % 10 >= 0)
+	if (n == 0)
+	{
 		length++;
-	while (n /= 10)
+		return (length);
+	}
+	while (n > 0)
+	{
+		n = n / 10;
 		length++;
+	}
 	return (length);
 }
 
@@ -36,7 +44,8 @@ char	*ft_print_n(int n)
 		negative += 1;
 		n = -n;
 	}
-	if (!(str = (char *)malloc(negative + n_length(n) + 1)))
+	str = (char *)malloc(negative + n_length(n) + 1);
+	if (!str)
 		return (NULL);
 	index = n_length(n) + negative;
 	str[index--] = '\0';

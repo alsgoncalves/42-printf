@@ -6,11 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:41:42 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/13 11:51:46 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:54:20 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 char	ft_check_char(t_flag *flags, va_list ap, char a)
 {
@@ -42,7 +42,10 @@ int	ft_treat_char(va_list ap, t_flag *flags, char a)
 		}
 		else
 		{
-			char_count = ft_treat_width(flags->width, 1, 1, &char_count) + 1;
+			if (flags->zero && c == '%')
+				char_count = ft_treat_width(flags->width, 1, 0, &char_count) + 1;
+			else
+				char_count = ft_treat_width(flags->width, 1, 1, &char_count) + 1;
 			ft_putchar(c);
 		}
 	}

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asobreir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 15:55:47 by asobreir          #+#    #+#             */
-/*   Updated: 2021/02/13 15:58:43 by asobreir         ###   ########.fr       */
+/*   Created: 2021/03/24 11:33:50 by asobreir          #+#    #+#             */
+/*   Updated: 2021/04/16 14:43:34 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
-{
-	if (c >= 0x20 && c < 0x7f)
-		return (1);
-	return (0);
+void	ft_putchar(char c)
+{	
+	write(1, &c, 1);
 }

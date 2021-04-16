@@ -6,11 +6,11 @@
 /*   By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 15:46:01 by asobreir          #+#    #+#             */
-/*   Updated: 2021/04/14 16:15:34 by asobreir         ###   ########.fr       */
+/*   Updated: 2021/04/16 13:17:08 by asobreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_treat_pointer(va_list ap, t_flag *flags, char a)
 {

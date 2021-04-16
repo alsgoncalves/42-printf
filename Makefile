@@ -6,7 +6,7 @@
 #    By: asobreir <asobreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 12:16:48 by asobreir          #+#    #+#              #
-#    Updated: 2021/03/30 17:15:06 by asobreir         ###   ########.fr        #
+#    Updated: 2021/04/16 16:36:36 by asobreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT = libft
 
 CC = gcc
 
-FLAGS := -Wall -Wextra -Werror -g
+FLAGS := -Wall -Wextra -Werror -g -I includes
 
 RM = rm -f
 
@@ -36,12 +36,12 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean: $(OBJS)
-	$(RM) $(OBJS)
 	@make clean -C $(LIBFT)
+	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) 
 	@make fclean -C $(LIBFT)
+	$(RM) $(NAME)
 
 re: fclean all
 
